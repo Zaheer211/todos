@@ -1,0 +1,22 @@
+<div class="list-group">
+
+    <% for (let i = 0; i < todos.length; i++) { %>
+        <a id="<%= todos[i].id %>" class="list-group-item">
+            <h4 class="list-group-item-heading">
+                <%= todos[i].title %>
+            </h4>
+            <p class="list-group-item-text">
+                <%= todos[i].detail %>
+            </p>
+            <br>
+            <span>
+                <b>Expires At: </b>
+                <%= moment(todos[i].expiry).format("DD MMM YYYY -- H:mm:ss") %>
+            </span>
+            <br>
+            <strong>Expiring:</strong>
+            <span data-time="<%= todos[i].expiry %>" class="timeRemaining"></span>
+        </a>
+        <% } %>
+
+</div>
